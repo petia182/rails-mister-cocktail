@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+ruby '2.3.1'
 # Gemfile fron end
 gem "bootstrap-sass"
 gem "font-awesome-sass"
