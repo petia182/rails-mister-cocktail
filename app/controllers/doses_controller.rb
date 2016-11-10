@@ -1,6 +1,6 @@
 class DosesController < ApplicationController
 
-  before_action :find_cocktail, only:[:new, :create, :destroy]
+  before_action :find_cocktail, only:[:new, :create]
 
   def new
     @dose = Dose.new
@@ -18,6 +18,7 @@ class DosesController < ApplicationController
 
   def destroy
     @dose = Dose.find(params[:id])
+    @cocktail = @dose.cocktail
     @dose.destroy
 
     redirect_to cocktail_path(@cocktail)
