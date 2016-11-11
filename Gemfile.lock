@@ -42,6 +42,7 @@ GEM
     autoprefixer-rails (6.3.1)
       execjs
       json
+    bcrypt (3.1.11)
     better_errors (2.1.1)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
@@ -67,6 +68,8 @@ GEM
     erubis (2.7.0)
     execjs (2.7.0)
     ffi (1.9.14)
+    figaro (1.1.1)
+      thor (~> 0.14)
     font-awesome-sass (4.5.0)
       sass (>= 3.2)
     globalid (0.3.7)
@@ -192,11 +195,13 @@ PLATFORMS
 
 DEPENDENCIES
   autoprefixer-rails
+  bcrypt (~> 3.1.7)
   better_errors
   binding_of_caller
   bootstrap-sass
   byebug
   coffee-rails (~> 4.2)
+  figaro
   font-awesome-sass
   jquery-rails
   listen (~> 3.0.5)

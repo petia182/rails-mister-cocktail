@@ -1,5 +1,7 @@
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('http://foodnetwork.sndimg.com/content/dam/images/food/fullset/2011/4/25/0/CCWM_Fresh-Orange-Mojito-2_s4x3.jpg.rend.sniipadlarge.jpeg');">
   <div class="banner-content">
+
+
   <div class="title">
     <h2><%= @cocktail.name %></h2>
   </div>
@@ -11,7 +13,7 @@
         <%= dose.description %> |
         <%= link_to "delete", dose_path(dose),
         method: :delete,
-        data: { confirm: "Are you sure"}, class: "btn btn-danger btn-sm" %>
+        data: { confirm: "Are you sure"}, class: "btn btn-outline-success" %>
       </li>
       <% end %>
     </div>

@@ -5,8 +5,8 @@
 <h2>Add new dose:</h2>
 
 <%= simple_form_for [@cocktail, @dose] do |f| %>
-  <%= f.input :ingredient_id, collection: Ingredient.all %>
-  <%= f.input :description %>
+  <%= f.input :ingredient_id, collection: Ingredient.order(:name) %>
+  <%= f.input :description, label: "Quantity" %>
   <%= f.submit "Add", class: "btn btn-success" %>
 
 <% end %>
