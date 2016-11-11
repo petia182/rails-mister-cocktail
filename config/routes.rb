@@ -1,19 +1,25 @@
 Rails.application.routes.draw do
 
-  get 'sessions/new'
+  get 'reviews/new'
 
-  get 'sessions/create'
+  get 'reviews/create'
 
-  get 'sessions/destroy'
+  # get 'sessions/new'
 
-  get 'users/new'
+  # get 'sessions/create'
 
-  get 'users/create'
+  # get 'sessions/destroy'
 
-  root 'cocktails#index'
+  # get 'users/new'
+
+  # get 'users/create'
+
+  # root 'cocktails#index'
 
   resources :cocktails  do
     resources :doses, only:[:new, :create]
+      resources :reviews, only:[:new, :create] do
+    end
   end
 
   resources :doses, only:[:destroy]

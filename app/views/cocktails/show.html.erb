@@ -1,7 +1,5 @@
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('http://foodnetwork.sndimg.com/content/dam/images/food/fullset/2011/4/25/0/CCWM_Fresh-Orange-Mojito-2_s4x3.jpg.rend.sniipadlarge.jpeg');">
   <div class="banner-content">
-
-
     <div class="title">
       <h2><%= @cocktail.name %></h2>
       <%= cl_image_tag @cocktail.photo, height: 200 %>
@@ -14,15 +12,22 @@
         <%= dose.description %> |
         <%= link_to "delete", dose_path(dose),
         method: :delete,
-        data: { confirm: "Are you sure"}, class: "btn btn-outline-success" %>
+        data: { confirm: "Are you sure"}, class: "btn-small" %>
       </li>
       <% end %>
-    </div>
-    <div class="button">
-      <%= link_to "Add dose", new_cocktail_dose_path(@cocktail), class: "btn btn-success" %>
+      <p>Reviews: <% @cocktail.reviews.each do |review| %>
+        <li>
+          <%= review.content %> (Rating: <%= render 'rating', rating: review.rating %>)
+          <% end %></p>
+        </li>
+
+      </div>
+      <%= link_to "Leave a review", new_cocktail_review_path(@cocktail), class: "btn btn-primary" %>
+      <div class="button">
+        <%= link_to "Add dose", new_cocktail_dose_path(@cocktail), class: "btn btn-success" %>
+      </div>
     </div>
   </div>
-</div>
 
 
 
