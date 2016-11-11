@@ -8,7 +8,9 @@ gem "simple_form"
 gem "autoprefixer-rails"
 
 
+gem 'cloudinary', '1.1.0'
 gem 'figaro'
+gem 'carrierwave'
 
 gem 'rails-controller-testing'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

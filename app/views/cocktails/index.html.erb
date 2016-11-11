@@ -1,19 +1,20 @@
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('http://foodnetwork.sndimg.com/content/dam/images/food/fullset/2011/4/25/0/CCWM_Fresh-Orange-Mojito-2_s4x3.jpg.rend.sniipadlarge.jpeg');">
   <div class="banner-content">
     <div class="title">
-    <h3 class="text-center">Cocktails</h3>
+      <h3 class="text-center">Cocktails</h3>
     </div>
-      <% @cocktails.each do |cocktail|  %>
-      <div class="list">
+    <% @cocktails.each do |cocktail|  %>
+    <div class="list">
       <%= link_to cocktail.name, cocktail_path(cocktail) %>
+      <%= cl_image_tag cocktail.photo, :height=>150, :crop=>"thumb" %>
       <p>
-      <%= link_to "View", cocktail_path(cocktail), class: "btn btn-success btn-sm" %> |
-      <%= link_to "Remove", cocktail_path(cocktail), class: "btn btn-outline-success btn-sm",
-       method: :delete,
-       data: { confirm: "Are you sure?", } %>
-       </p>
-       </div>
-      <% end %>
+        <%= link_to "View", cocktail_path(cocktail), class: "btn btn-success btn-sm" %> |
+        <%= link_to "Remove", cocktail_path(cocktail), class: "btn btn-outline-success btn-sm",
+        method: :delete,
+        data: { confirm: "Are you sure?", } %>
+      </p>
+    </div>
+    <% end %>
   </div>
 </div>
 
